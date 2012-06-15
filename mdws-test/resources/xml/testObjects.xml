@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net" >
+  <!-- ************************************************************************
+  IMPORTANT: See the end of this file for objects that you will need to put
+             into your secret-testObjects.xml 
+  ************************************************************************* -->
+  
+  <object id="VehuDeveloper" type="gov.va.medora.StringTestObject">
+    <property name="properties">
+      <dictionary key-type="string" value-type="string">
+        <entry key="context" value="OR CPRS GUI CHART" />
+        <entry key="userName" value="VEHU,ONE" />
+        <entry key="accessCode" value="01vehu" />
+        <entry key="verifyCode" value="vehu01" />
+        <entry key="siteCode" value="998" />
+        <entry key="userDuz" value="20001" />
+        <entry key="userSsn" value="" />
+      </dictionary>
+    </property>
+  </object>
+
+  <!-- * * * secret-testObjects.xml * * * * * * * * * * * * * * * * * * * * * *
+  * Developer information for connecting against 506. If this is not already  *
+  * in your secret-testObjects.xml, copy this over and replace with developer *
+  * credentials. Under no circumstances should this be filled out here and    *
+  * checked in!!!                                                             *
+  <object id="ProductionDeveloper" type="gov.va.medora.StringTestObject, mdws-test">
+    <property name="properties">
+      <dictionary key-type="string" value-type="string">
+        <entry key="context" value="OR CPRS GUI CHART" />
+        * userName: LASTNAME,FIRST *
+        <entry key="userName" value="" />
+        <entry key="accessCode" value="" />
+        <entry key="verifyCode" value="" />
+        * siteCode: the site you are authorizing against for visiting *
+        <entry key="siteCode" value="506" />
+        * User's DUZ at that site *
+        <entry key="userDuz" value="" />
+      </dictionary>
+    </property>
+  </object>
+
+  <object id="ThisDeveloper" type="gov.va.medora.StringTestObject">
+    <property name="properties">
+      <dictionary key-type="string" value-type="string">
+        <entry key="context" value="OR CPRS GUI CHART" />
+        <entry key="userName" value="" />
+        <entry key="accessCode" value="" />
+        <entry key="verifyCode" value="" />
+        <entry key="siteCode" value="" />
+        <entry key="userDuz" value="" />
+        <entry key="userSsn" value="" />
+      </dictionary>
+    </property>
+  </object>
+  
+  * Application Passwords Required for Visiting *
+  <object id="ProductionApplicationPasswords" type="gov.va.medora.StringTestObject, mdws-test">
+    <property name="properties">
+      <dictionary key-type="string" value-type="string">
+        <entry key="UtilizationMgtService" value="" />
+        <entry key="BhieService" value="" />
+        <entry key="TbiService" value="" />
+      </dictionary>
+    </property>
+  </object>
+  * * * END secret-testObjects.xml * * * * * * * * * * * * * * * * * * * * *-->
+</objects>

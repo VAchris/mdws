@@ -1,0 +1,82 @@
+AccountLib
+----------
+public UserTO login(string accessCode, string verifyCode, string context)
+	public void testLogin()
+	
+public UserTO connectAndLogin(string sitecode, string username, string pwd, string context)
+	public void testConnectAndLogin()
+	
+public UserTO visitAndAuthorize(
+		string pwd,
+		string sitecode,
+		string userSitecode,
+		string userName,
+		string DUZ,
+		string SSN,
+		string context)
+	public void testVisitAndAuthorize_SameSite_NonBse()
+	public void testVisitAndAuthorize_SameSite_BseV2W()
+	public void testVisitAndAuthorize_RemoteSite_TestUser_NonBse()
+	public void testVisitAndAuthorize_RemoteSite_TestUser_BseV2W()
+	public void testVisitAndAuthorize_RemoteSite_NonBse()
+	public void testVisitAndAuthorize_RemoteSite_BseV2W
+	
+public TaggedTextArray visit(string pwd, string sitecode, string context)
+	public void testVisit_SameSite_NonBse()
+	public void testVisit_SameSite_BseV2W()
+	public void testVisit_RemoteSite_TestUser_NonBse()
+	public void testVisit_RemoteSite_TestUser_BseV2W()
+	public void testVisit_RemotSite_NonBse()
+	public void testVisit_RemotSite_BseV2W()
+	
+public TaggedTextArray visitSites(string pwd, string sitelist, string context)
+	public void testVisitSites_SitesOnly_TestUser_NonBse()
+	public void testVisitSites_SitesOnly_TestUser_BseV2W()
+	public void testVisitSites_SitesOnly_NonBse()
+	public void testVisitSites_SitesOnly_BseV2W()
+	public void testVisitSites_SingleVisn_NonBse()
+	public void testVisitSites_MultipleVisns_NonBse()
+	public void testVisitSites_MultipleVisnsWithSite_NonBse()
+	public void testVisitSites_MultipleVisnsWithDuplicateSite_NonBse()
+	
+public SiteArray setupMultiSourcePatientQuery(string pwd, string context)
+	public void testSetupMultiSourcePatientQuery_TestUser_NonBse()
+	public void testSetupMultiSourcePatientQuery_TestUser_BseV2W()
+	public void testSetupMultiSourcePatientQuery_NonBse()
+	public void testSetupMultiSourcePatientQuery_BseV2W()
+	
+public PersonsTO cprsLaunch(string pwd, string sitecode, string DUZ, string DFN)
+	public void testCprsLaunch_NonBse()
+	public void testCprsLaunch_BseV2W()
+	
+public TaggedTextArray visitDoD(string pwd)
+
+public SiteArray patientVisit(string pwd, string homeSitecode, string mpiPid, bool multiSite)
+	public void testPatientVisit_NonBse()
+	public void testPatientVisit_BseV2W()
+	
+internal TaggedTextArray setupMultiSourceQuery(string pwd, List<DataSource> sources, string context)
+	public void testSetupMultiSourceQuery_TestUser_NonBse()
+	public void testSetupMultiSourceQuery_TestUser_BseV2W()
+	public void testSetupMultiSourceQuery_NonBse()
+	public void testSetupMultiSourceQuery_BseV2W()
+	
+internal User doTheVisit(string sitecode, AbstractCredentials credentials, AbstractPermission permission)
+	public void testDoTheVisit_NonBse()
+	public void testDoTheVisit_BseV2W()
+	
+internal User getVisitorData(string userSitecode, string DUZ, string appPwd)
+	public void testGetVisitorData_NonBse()
+	public void testGetVisitorData_BseV2W()
+	
+Notes
+-----
+Test VISN, etc. in visitSites.
+Test failed BSE call.
+Test invalid context.
+Invalid sitecodes, VISN IDs.
+Invalid pwd.
+Invalid DUZ, SSN, etc.
+Patient in some sites, not others.
+Put results in secret objects.
+Site already included in Vx in visitSites.
