@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>3.0</ProductVersion>
+    <ProductVersion>3.5</ProductVersion>
     <ProjectGuid>{042b25d1-088d-4d77-8a1f-60bc08d85f09}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
     <OutputName>mdws-setup</OutputName>
