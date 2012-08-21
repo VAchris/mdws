@@ -87,7 +87,7 @@
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="TOReflection">
-      <HintPath>resources\lib\toreflection\TOReflection.dll</HintPath>
+      <HintPath>..\..\mdo\mdo-test\resources\lib\toreflection\TOReflection.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
