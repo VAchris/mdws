@@ -1,0 +1,20 @@
+Medical Domain Web Services (MDWS)
+
+This product includes software developed at the US Department of
+Veterans Affairs and released into the public domain.  Portions of the
+software not modified from the DVA release remain in the public domain.
+
+This product includes a copy of jQuery and some plugins distributed
+under their MIT licenses:
+
+  jQuery JavaScript Library v1.4 (http://jquery.com)
+  Copyright 2010, John Resig
+
+  Includes Sizzle.js (http://sizzlejs.com)
+  Copyright 2010, The Dojo Foundation
+
+  Cookie plugin
+  Copyright (c) 2006 Klaus Hartl (stilbuero.de)
+
+  Treeview 1.4 (http://docs.jquery.com/Plugins/Treeview)
+  Copyright (c) 2007 Jörn Zaefferer
