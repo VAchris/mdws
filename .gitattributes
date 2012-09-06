@@ -1,7 +1,43 @@
 .git*            export-ignore
 
+[attr]xml        text      -whitespace
+
 *                text=auto
+
+*.bmp            binary    -whitespace
+*.dll            binary    -whitespace
+*.exe            binary    -whitespace
+*.gif            binary    -whitespace
+*.pdb            binary    -whitespace
+*.png            binary    -whitespace
+
+*.asax           text
+*.asmx           text
+*.aspx           text
+*.cs             text
+*.css            text
+*.datasource     xml
+*.html           xml
+*.js             text
+*.nunit          xml
+*.sln            text       eol=crlf  -whitespace
+*.txt            text
+*.wsdl           xml
+*.xml            xml
+*.xsd            xml
+*proj            xml        eol=crlf
 
 LICENSE          text
 NOTICE           text
 README           text
+
+ClassDiagram1.cd xml
+EmrSvc.disco     xml
+EmrSvc.svc       text
+EmrSvc.wsdl      xml
+Product.wxs      xml
+Reference.map    xml
+Settings.settings xml
+Web.config       xml
+app.conf         text
+app.config       xml
