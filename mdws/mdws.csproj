@@ -18,6 +18,7 @@
     </UpgradeBackupLocation>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -87,7 +88,7 @@
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="TOReflection">
-      <HintPath>..\..\mdo\mdo-test\resources\lib\toreflection\TOReflection.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\toreflection\TOReflection.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +120,8 @@
     <Compile Include="src\dao\sql\ConnectionTester.cs" />
     <Compile Include="src\dao\sql\MdwsToolsDao.cs" />
     <Compile Include="src\dao\sql\UserValidationDao.cs" />
+    <Compile Include="src\dto\AppointmentTypeArray.cs" />
+    <Compile Include="src\dto\AppointmentTypeTO.cs" />
     <Compile Include="src\dto\BoolTO.cs" />
     <Compile Include="src\dto\ClaimTO.cs" />
     <Compile Include="src\dto\TaggedHealthSummaryArrays.cs" />
@@ -189,6 +192,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="src\svc\PhrSvc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\svc\SchedulingSvc.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Web\auth\Administration.aspx.cs">

@@ -1138,5 +1138,178 @@ namespace gov.va.medora.mdws
             }
             return result;
         }
+
+        public AppointmentTypeArray getAppointmentTypes(string target)
+        {
+            AppointmentTypeArray result = new AppointmentTypeArray();
+
+            if (!mySession.ConnectionSet.IsAuthorized)
+            {
+                result.fault = new FaultTO("Connections not ready for operation", "Need to login?");
+            }
+            if (String.IsNullOrEmpty(target))
+            {
+                target = "A";
+            }
+
+            if (result.fault != null)
+            {
+                return result;
+            }
+
+            try
+            {
+                IList<AppointmentType> types = new EncounterApi().getAppointmentTypes(mySession.ConnectionSet.BaseConnection, target);
+                result = new AppointmentTypeArray(types);
+            }
+            catch (Exception exc)
+            {
+                result.fault = new FaultTO(exc);
+            }
+
+            return result;
+        }
+
+        public TaggedAppointmentArray getPendingAppointments(string startDate)
+        {
+            TaggedAppointmentArray result = new TaggedAppointmentArray();
+
+            if (!mySession.ConnectionSet.IsAuthorized)
+            {
+                result.fault = new FaultTO("Connections not ready for operation", "Need to login?");
+            }
+            else if (String.IsNullOrEmpty(startDate))
+            {
+                result.fault = new FaultTO("Missing startDate");
+            }
+
+            if (result.fault != null)
+            {
+                return result;
+            }
+
+            try
+            {
+                IList<Appointment> appts = new EncounterApi().getPendingAppointments(mySession.ConnectionSet.BaseConnection, startDate);
+                result = new TaggedAppointmentArray(mySession.ConnectionSet.BaseConnection.DataSource.SiteId.Id, appts);
+            }
+            catch (Exception exc)
+            {
+                result.fault = new FaultTO(exc);
+            }
+
+            return result;
+        }
+
+        public TextTO getClinicAvailability(string clinicId)
+        {
+            TextTO result = new TextTO();
+
+            if (!mySession.ConnectionSet.IsAuthorized)
+            {
+                result.fault = new FaultTO("Connections not ready for operation", "Need to login?");
+            }
+            else if (String.IsNullOrEmpty(clinicId))
+            {
+                result.fault = new FaultTO("Missing clinic ID");
+            }
+
+            if (result.fault != null)
+            {
+                return result;
+            }
+
+            try
+            {
+                string availabilityString = new EncounterApi().getClinicAvailability(mySession.ConnectionSet.BaseConnection, clinicId);
+                result = new TextTO(availabilityString);
+            }
+            catch (Exception exc)
+            {
+                result.fault = new FaultTO(exc);
+            }
+
+            return result;
+        }
+
+        public AppointmentTO makeAppointment(string clinicId, string appointmentType, string appointmentTimestamp, string appointmentLength)
+        {
+            AppointmentTO result = new AppointmentTO();
+
+            if (!mySession.ConnectionSet.IsAuthorized)
+            {
+                result.fault = new FaultTO("Connections not ready for operation", "Need to login?");
+            }
+            else if (String.IsNullOrEmpty(clinicId))
+            {
+                result.fault = new FaultTO("Missing clinic ID");
+            }
+            else if (String.IsNullOrEmpty(appointmentTimestamp))
+            {
+                result.fault = new FaultTO("Missing appointment timestamp");
+            }
+            else if (String.IsNullOrEmpty(appointmentType))
+            {
+                result.fault = new FaultTO("Missing appointment type");
+            }
+            else if (String.IsNullOrEmpty(appointmentLength))
+            {
+                result.fault = new FaultTO("Missing appointment length");
+            }
+
+            if (result.fault != null)
+            {
+                return result;
+            }
+
+            try
+            {
+                Appointment appt = new Appointment()
+                {
+                    AppointmentType = new AppointmentType() { ID = appointmentType },
+                    Clinic = new HospitalLocation() { Id = clinicId },
+                    Length = appointmentLength,
+                    Timestamp = appointmentTimestamp
+                };
+                appt = new EncounterApi().makeAppointment(mySession.ConnectionSet.BaseConnection, appt);
+                result = new AppointmentTO(appt);
+            }
+            catch (Exception exc)
+            {
+                result.fault = new FaultTO(exc);
+            }
+
+            return result;
+        }
+
+        public HospitalLocationTO getClinicSchedulingDetails(string clinicId)
+        {
+            HospitalLocationTO result = new HospitalLocationTO();
+
+            if (!mySession.ConnectionSet.IsAuthorized)
+            {
+                result.fault = new FaultTO("Connections not ready for operation", "Need to login?");
+            }
+            else if (String.IsNullOrEmpty(clinicId))
+            {
+                result.fault = new FaultTO("Missing clinic ID");
+            }
+
+            if (result.fault != null)
+            {
+                return result;
+            }
+
+            try
+            {
+                result = new HospitalLocationTO(new EncounterApi().getClinicSchedulingDetails(mySession.ConnectionSet.BaseConnection, clinicId));
+            }
+            catch (Exception exc)
+            {
+                result.fault = new FaultTO(exc);
+            }
+
+            return result;
+        }
     }
 }

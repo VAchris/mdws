@@ -77,27 +77,27 @@
   <ItemGroup>
     <Reference Include="antlr.runtime, Version=2.7.6.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\spring\bin\antlr.runtime.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\spring\bin\antlr.runtime.dll</HintPath>
     </Reference>
     <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\spring\bin\Common.Logging.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\spring\bin\Common.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Common.Logging.Log4Net, Version=1.2.0.2, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\spring\bin\Common.Logging.Log4Net.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\spring\bin\Common.Logging.Log4Net.dll</HintPath>
     </Reference>
     <Reference Include="Common.Logging.Log4Net129, Version=1.2.0.1, Culture=neutral, PublicKeyToken=af08829b84f0328e">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\spring\bin\Common.Logging.Log4Net129.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\spring\bin\Common.Logging.Log4Net129.dll</HintPath>
     </Reference>
     <Reference Include="Common.Logging.NLog, Version=1.2.0.2, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\spring\bin\Common.Logging.NLog.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\spring\bin\Common.Logging.NLog.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\log4net\log4net.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\log4net\log4net.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=2.2.9.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -105,23 +105,23 @@
     </Reference>
     <Reference Include="Spring.Aop, Version=1.1.2.20125, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\spring\bin\Spring.Aop.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\spring\bin\Spring.Aop.dll</HintPath>
     </Reference>
     <Reference Include="Spring.Core, Version=1.1.0.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\spring\bin\Spring.Core.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\spring\bin\Spring.Core.dll</HintPath>
     </Reference>
     <Reference Include="Spring.Data, Version=1.1.0.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\spring\bin\Spring.Data.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\spring\bin\Spring.Data.dll</HintPath>
     </Reference>
     <Reference Include="Spring.Services, Version=1.1.0.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\spring\bin\Spring.Services.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\spring\bin\Spring.Services.dll</HintPath>
     </Reference>
     <Reference Include="Spring.Web, Version=1.1.0.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\spring\bin\Spring.Web.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\spring\bin\Spring.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -137,7 +137,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="TOReflection, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\mdo\mdo-test\resources\lib\toreflection\TOReflection.dll</HintPath>
+      <HintPath>..\..\mdo-test-deps\toreflection\TOReflection.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

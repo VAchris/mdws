@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="gov.va.medora.mdws.SchedulingSvc" CodeBehind="SchedulingSvc.cs" %>
