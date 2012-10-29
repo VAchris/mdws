@@ -1,8 +1,4 @@
-﻿using System;
-using System.Web;
-using System.Collections;
-using System.Web.Services;
-using System.Web.Services.Protocols;
+﻿using System.Web.Services;
 using System.ComponentModel;
 using gov.va.medora.mdws.dto;
 using System.ServiceModel;
@@ -20,6 +16,37 @@ namespace gov.va.medora.mdws
     public partial class SchedulingSvc : BaseService, ISchedulingSvc
     {
         public SchedulingSvc() : base() { }
+
+        [WebMethod(EnableSession = true, Description = "Get all VHA sites")]
+        public RegionArray getVHA()
+        {
+            return (RegionArray)MySession.execute("SitesLib", "getVHA", new object[] { });
+        }
+
+        [WebMethod(EnableSession = true, Description = "Connect to a single VistA system.")]
+        public DataSourceArray connect(string sitelist)
+        {
+            return (DataSourceArray)MySession.execute("ConnectionLib", "connectToLoginSite", new object[] { sitelist });
+        }
+
+        [WebMethod(EnableSession = true, Description = "Log onto a single VistA system.")]
+        public UserTO login(string username, string pwd, string context)
+        {
+            return (UserTO)MySession.execute("AccountLib", "login", new object[] { username, pwd, context });
+        }
+
+        [OperationContract]
+        [WebMethod(EnableSession = true, Description = "Disconnect from single Vista system.")]
+        public TaggedTextArray disconnect()
+        {
+            return (TaggedTextArray)MySession.execute("ConnectionLib", "disconnectAll", new object[] { });
+        }
+
+        [WebMethod(EnableSession = true, Description = "Select a patient at logged in site.")]
+        public PatientTO select(string DFN)
+        {
+            return (PatientTO)MySession.execute("PatientLib", "select", new object[] { DFN });
+        }
 
         [WebMethod(EnableSession = true, Description = "Get list of clinics")]
         public TaggedHospitalLocationArray getClinics(string target)

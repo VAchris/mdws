@@ -23,8 +23,6 @@ using System.Linq;
 using System.Web;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using System.Data.Linq;
-using System.Data.Linq.Mapping;
 using System.Net;
 using System.Data;
 using gov.va.medora.mdws.dto;

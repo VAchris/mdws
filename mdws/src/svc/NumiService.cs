@@ -16,17 +16,8 @@
 //
 #endregion
 
-using System;
-using System.Web;
-using System.Collections;
-using System.Collections.Specialized;
 using System.Web.Services;
-using System.Web.Services.Protocols;
 using System.ComponentModel;
-using System.Xml.Serialization;
-
-using gov.va.medora.mdo;
-using gov.va.medora.mdws;
 using gov.va.medora.mdws.dto;
 
 namespace gov.va.medora.mdws.numi

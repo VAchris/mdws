@@ -16,9 +16,6 @@
 //
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Spring.Context;
 using Spring.Context.Support;
 using gov.va.medora.mdo;
