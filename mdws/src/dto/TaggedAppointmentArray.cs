@@ -35,7 +35,26 @@ namespace gov.va.medora.mdws.dto
             this.count = 0;
         }
 
+        public TaggedAppointmentArray(string tag, IList<Appointment> mdos)
+        {
+            if (mdos == null || mdos.Count == 0)
+            {
+                this.count = 0;
+                return;
+            }
+
+            Appointment[] appts = new Appointment[mdos.Count];
+            mdos.CopyTo(appts, 0);
+
+            initialize(tag, appts);
+        }
+
         public TaggedAppointmentArray(string tag, Appointment[] mdos)
+        {
+            initialize(tag, mdos);
+        }
+
+        void initialize(string tag, Appointment[] mdos)
         {
             this.tag = tag;
             if (mdos == null)
