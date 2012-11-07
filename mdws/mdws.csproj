@@ -171,6 +171,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\conf\MdwsConfiguration.cs" />
+    <Compile Include="src\RestSessionMgr.cs" />
     <Compile Include="src\svc\BhieService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -186,6 +187,7 @@
     <Compile Include="src\svc\SchedulingSvc.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="src\svc\WcfScheduling.cs" />
     <Compile Include="Web\auth\Administration.aspx.cs">
       <DependentUpon>Administration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

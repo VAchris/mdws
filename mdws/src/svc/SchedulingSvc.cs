@@ -20,7 +20,6 @@ using System.Web.Services;
 using System.ComponentModel;
 using gov.va.medora.mdws.dto;
 using System.ServiceModel;
-using System.ServiceModel.Web;
 using System.ServiceModel.Activation;
 
 namespace gov.va.medora.mdws
