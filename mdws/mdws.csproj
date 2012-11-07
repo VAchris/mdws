@@ -67,6 +67,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
@@ -164,6 +165,7 @@
     <Compile Include="src\lib\ClaimsLib.cs" />
     <Compile Include="src\lib\ClinicalRemindersLib.cs" />
     <Compile Include="src\lib\LocationLib.cs" />
+    <Compile Include="src\lib\SchedulingLib.cs" />
     <Compile Include="src\lib\SecureMessageLib.cs" />
     <Compile Include="src\lib\UserLib.cs">
       <SubType>Code</SubType>
