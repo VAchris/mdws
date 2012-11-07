@@ -34,6 +34,7 @@ namespace gov.va.medora.mdws
     [Serializable]
     public class MySession
     {
+        public string Token { get; set; }
         MdwsConfiguration _mdwsConfig;
         string _facadeName;
         SiteTable _siteTable;
@@ -241,6 +242,19 @@ namespace gov.va.medora.mdws
 
         void watchSitesFile(string path)
         {
+            // This needs to be finished and tested before we implement - #2829
+            //if (_mdwsConfig == null || _mdwsConfig.AllConfigs == null || !_mdwsConfig.AllConfigs.ContainsKey(MdwsConfigConstants.MDWS_CONFIG_SECTION)
+            //    || !_mdwsConfig.AllConfigs[MdwsConfigConstants.MDWS_CONFIG_SECTION].ContainsKey(MdwsConfigConstants.WATCH_SITES_FILE))
+            //{
+            //    return;
+            //}
+
+            //bool watchFile = false;
+            //Boolean.TryParse(_mdwsConfig.AllConfigs[MdwsConfigConstants.MDWS_CONFIG_SECTION][MdwsConfigConstants.WATCH_SITES_FILE], out watchFile);
+            //if (!watchFile)
+            //{
+            //    return;
+            //}
 
             FileSystemWatcher watcher = new FileSystemWatcher(path);
             watcher.Filter = (_mdwsConfig.FacadeConfiguration.SitesFileName);

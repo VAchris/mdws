@@ -84,7 +84,6 @@ namespace gov.va.medora.mdws
     public interface ISchedulingSvc
     {
         [OperationContract]
-        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, UriTemplate = "clinics/{id}")]
         TaggedHospitalLocationArray getClinics(string target);
 
         [OperationContract]
