@@ -22,6 +22,8 @@ using System.Web.Services;
 using System.Web.Script.Services;
 using System.ComponentModel;
 using gov.va.medora.mdws.dto;
+using System.ServiceModel;
+using System.ServiceModel.Activation;
 
 namespace gov.va.medora.mdws
 {
@@ -32,18 +34,34 @@ namespace gov.va.medora.mdws
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [ToolboxItem(false)]
     [ScriptService]
-    public partial class BaseService : System.Web.Services.WebService
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    public partial class BaseService : System.Web.Services.WebService, IBaseService
     {
         public const string VERSION = "1.1.0";
 
         public BaseService()
         {
+            //if (!OperationContext.Current
+            //OperationContext.Current.IncomingMessageProperties.Add("MySession", new MySession(this.GetType().Name));
+            //RequestContext wcfContext = this.
+            //if (OperationContext.Current == null || String.IsNullOrEmpty(OperationContext.Current.SessionId))
+            //{
+            //    return;
+            //}
             // If not Http request has been made yet Session is null
             // This happens before the Startup page is displayed
-            if (HttpContext.Current.Session == null)
+
+            if (OperationContext.Current != null)
+            {
+                System.Console.WriteLine("You're sooo cool Joel");
+            }
+
+            if (HttpContext.Current == null || HttpContext.Current.Session == null)
             {
                 return;
             }
+
+
 
             // At this point a request has been made to a web service page
             if (HttpContext.Current.Session["MySession"] == null)
@@ -86,7 +104,7 @@ namespace gov.va.medora.mdws
             }
             catch (Exception)
             {
-                result.fault = new FaultTO("This facade does not contain any version information"); 
+                result.fault = new FaultTO("This facade does not contain any version information");
             }
             return result;
         }
@@ -102,5 +120,64 @@ namespace gov.va.medora.mdws
         {
             return (TextArray)MySession.execute("ConnectionLib", "getRpcs", new object[] { });
         }
+
+        [WebMethod(EnableSession = true, Description = "Get all VHA sites")]
+        public RegionArray getVHA()
+        {
+            return (RegionArray)MySession.execute("SitesLib", "getVHA", new object[] { });
+        }
+
+        [OperationContract]
+        [WebMethod(EnableSession = true, Description = "Connect to a single VistA system")]
+        public DataSourceArray connect(string sitelist)
+        {
+            return (DataSourceArray)MySession.execute("ConnectionLib", "connectToLoginSite", new object[] { sitelist });
+        }
+
+        [OperationContract]
+        [WebMethod(EnableSession = true, Description = "Log onto a single VistA system")]
+        public UserTO login(string username, string pwd, string context)
+        {
+            return (UserTO)MySession.execute("AccountLib", "login", new object[] { username, pwd, context });
+        }
+
+        [OperationContract]
+        [WebMethod(EnableSession = true, Description = "Disconnect all Vista systems")]
+        public TaggedTextArray disconnect()
+        {
+            return (TaggedTextArray)MySession.execute("ConnectionLib", "disconnectAll", new object[] { });
+        }
+
+    }
+
+    [ServiceContract]
+    public interface IBaseService
+    {
+        [OperationContract]
+        string getVersion();
+
+        [OperationContract]
+        SiteTO addDataSource(string id, string name, string datasource, string port, string modality, string protocol, string region);
+
+        [OperationContract]
+        TextTO getFacadeVersion();
+
+        [OperationContract]
+        SiteArray setVha(string sitesFileName);
+
+        [OperationContract]
+        TextArray getRpcs();
+
+        [OperationContract]
+        RegionArray getVHA();
+
+        [OperationContract]
+        DataSourceArray connect(string sitelist);
+
+        [OperationContract]
+        TaggedTextArray disconnect();
+
+        [OperationContract]
+        UserTO login(string username, string pwd, string context);
     }
 }
